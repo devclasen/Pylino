@@ -25,6 +25,8 @@ Alles steckt in **einer Datei: `index.html`** (≈ 110 KB, davon ~40 KB eingebet
 
 Repo: https://github.com/devclasen/Pylino (öffentlich, Branch `main`). Seite: https://devclasen.github.io/Pylino/
 
+**Lokale Version = dieselbe Datei.** Per Doppelklick (`file://`) bekommt `<body>` die Klasse `local`, alles mit `.online-only` (Impressum-Links, Download-Link in der Hilfe) wird ausgeblendet. Die Hilfe der Webseite bietet `index.html` als `pylino.html` zum Herunterladen an. Keine zweite Kopie pflegen.
+
 ### Architektur
 
 - **Editor:** CodeMirror 5 (vom CDN cdnjs). Fallback auf `<textarea>`, falls CodeMirror nicht lädt. Tab = 4 Leerzeichen, Strg+Enter/F5 = ausführen, Esc = stoppen, Strg+S = speichern.

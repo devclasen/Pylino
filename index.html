@@ -209,6 +209,8 @@ footer { display: flex; justify-content: space-between; gap: 12px; padding: 6px 
 .status.error .dot { background: #d33; }
 @keyframes pulse { from { opacity: 1; } to { opacity: .35; } }
 footer a.legal { color: var(--muted); }
+/* lokal per Doppelklick geöffnet (file://): kein Impressum, kein Download-Link */
+body.local .online-only { display: none; }
 kbd { font: 11.5px ui-monospace, Consolas, monospace; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 0 4px; background: var(--panel); }
 
 /* Hilfe-Dialog */
@@ -331,7 +333,7 @@ dialog::backdrop { background: rgba(10, 12, 16, .45); }
 
 <footer>
   <span class="status busy" id="status"><span class="dot"></span><span id="status-text">Python wird geladen …</span></span>
-  <span><kbd>Strg</kbd>+<kbd>Enter</kbd> ausführen · <kbd>Esc</kbd> stoppen · <kbd>Strg</kbd>+<kbd>S</kbd> speichern · <a class="legal" href="datenschutz.html" target="_blank" rel="noopener">Impressum &amp; Datenschutz</a></span>
+  <span><kbd>Strg</kbd>+<kbd>Enter</kbd> ausführen · <kbd>Esc</kbd> stoppen · <kbd>Strg</kbd>+<kbd>S</kbd> speichern<span class="online-only"> · <a class="legal" href="datenschutz.html" target="_blank" rel="noopener">Impressum &amp; Datenschutz</a></span></span>
 </footer>
 
 <dialog id="help">
@@ -341,6 +343,7 @@ dialog::backdrop { background: rgba(10, 12, 16, .45); }
     <ul>
       <li>Einen aktuellen <b>Chrome</b> oder <b>Edge</b>. Firefox und Safari können nicht mit dem Pico sprechen.</li>
       <li>Beim Öffnen eine Internetverbindung, weil Python (ca. 10 MB) nachgeladen wird. Danach ist es im Browser zwischengespeichert.</li>
+      <li class="online-only">Pylino gibt es auch als einzelne Datei: <a href="index.html" download="pylino.html">pylino.html herunterladen</a>. Per Doppelklick öffnen – Chrome oder Edge und Internet beim Öffnen brauchst du trotzdem.</li>
     </ul>
 
     <h3>Python auf dem Computer</h3>
@@ -386,7 +389,7 @@ dialog::backdrop { background: rgba(10, 12, 16, .45); }
       <li><b>Programm hängt:</b> <b>Stopp</b> drücken. Auf dem Computer wird Python dabei kurz neu gestartet.</li>
     </ul>
 
-    <p class="credits">Pylino nutzt <a href="https://pyodide.org" target="_blank" rel="noopener">Pyodide</a>, <a href="https://codemirror.net/5/" target="_blank" rel="noopener">CodeMirror</a>, <a href="https://micropython.org" target="_blank" rel="noopener">MicroPython</a> und die Schrift Poppins (SIL Open Font License). · <a href="datenschutz.html" target="_blank" rel="noopener">Impressum &amp; Datenschutz</a></p>
+    <p class="credits">Pylino nutzt <a href="https://pyodide.org" target="_blank" rel="noopener">Pyodide</a>, <a href="https://codemirror.net/5/" target="_blank" rel="noopener">CodeMirror</a>, <a href="https://micropython.org" target="_blank" rel="noopener">MicroPython</a> und die Schrift Poppins (SIL Open Font License).<span class="online-only"> · <a href="datenschutz.html" target="_blank" rel="noopener">Impressum &amp; Datenschutz</a></span></p>
   </div>
 </dialog>
 
@@ -1481,6 +1484,9 @@ function init() {
   // Hilfe
   $('#btn-help').onclick = () => $('#help').showModal();
   $('#btn-help-close').onclick = () => $('#help').close();
+
+  // Lokal per Doppelklick geöffnet: Impressum & Co. ausblenden
+  if (location.protocol === 'file:') document.body.classList.add('local');
 
   // Handy: freundlich auf PC + Chrome/Edge hinweisen, Ausführen sperren
   if (State.phone) {
