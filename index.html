@@ -394,7 +394,7 @@ dialog::backdrop { background: rgba(10, 12, 16, .45); }
   <div class="dlg-head"><h2>Pylino ist für den Computer gemacht</h2></div>
   <div class="dlg-body">
     <p>Zum Programmieren brauchst du einen <b>PC oder Laptop</b> mit <b>Chrome</b> oder <b>Edge</b>.</p>
-    <p>Auf dem Handy fehlen Platz und eine richtige Tastatur. Außerdem funktionieren hier Eingaben mit <code>input()</code> und die Verbindung zum Pico nicht oder nur eingeschränkt.</p>
+    <p>Auf dem Handy fehlen Platz und eine richtige Tastatur. Außerdem funktionieren hier Eingaben mit <code>input()</code> und die Verbindung zum Pico nicht oder nur eingeschränkt. Hier kannst du dich deshalb nur umsehen – <b>Ausführen</b> geht am Computer.</p>
     <p id="phone-url-row" hidden>Öffne einfach diese Adresse am Computer:<br><span class="phone-url" id="phone-url"></span></p>
   </div>
   <div class="dlg-foot"><button class="btn" id="btn-phone-ok">Trotzdem ansehen</button></div>
@@ -874,11 +874,16 @@ function showError({ name, msg, line, text }) {
 }
 
 /* ---------------- Zustand & Oberfläche ---------------- */
-const State = { target: store.get('pylino.target', 'computer') === 'pico' ? 'pico' : 'computer', running: false };
+const State = {
+  target: store.get('pylino.target', 'computer') === 'pico' ? 'pico' : 'computer',
+  running: false,
+  // Handy: nur ansehen, nicht ausführen (Tablets zählen nicht dazu)
+  phone: window.matchMedia('(pointer: coarse)').matches && Math.min(screen.width, screen.height) < 600,
+};
 
 function setRunning(on) {
   State.running = on;
-  $('#btn-run').disabled = on;
+  $('#btn-run').disabled = on || State.phone;
   $('#btn-stop').disabled = !on;
   document.querySelectorAll('.seg button').forEach((b) => { b.disabled = on; });
   $('#btn-upload').disabled = on || !Pico.connected;
@@ -1349,7 +1354,7 @@ const Pico = {
 
 /* ---------------- Aktionen ---------------- */
 function runProgram() {
-  if (State.running) return;
+  if (State.running || State.phone) return;
   Editor.clearError();
   Konsole.clear();
   const code = Editor.get();
@@ -1477,9 +1482,10 @@ function init() {
   $('#btn-help').onclick = () => $('#help').showModal();
   $('#btn-help-close').onclick = () => $('#help').close();
 
-  // Handy: freundlich auf PC + Chrome/Edge hinweisen (Tablets bleiben ohne Hinweis)
-  const isPhone = window.matchMedia('(pointer: coarse)').matches && Math.min(screen.width, screen.height) < 600;
-  if (isPhone) {
+  // Handy: freundlich auf PC + Chrome/Edge hinweisen, Ausführen sperren
+  if (State.phone) {
+    $('#btn-run').disabled = true;
+    $('#btn-run').title = 'Ausführen geht nur am Computer mit Chrome oder Edge';
     if (/^https?:$/.test(location.protocol)) {
       $('#phone-url').textContent = location.host + location.pathname.replace(/index\.html$/, '');
       $('#phone-url-row').hidden = false;
@@ -1496,7 +1502,9 @@ function init() {
     else if (e.key === 'Escape' && State.running && !$('#help').open) { e.preventDefault(); stopProgram(); }
   });
 
-  Konsole.write('Willkommen bei Pylino!\nSchreibe links dein Programm und klicke auf „Ausführen“.\n\n', 'welcome');
+  Konsole.write(State.phone
+    ? 'Willkommen bei Pylino!\nAuf dem Handy kannst du dich umsehen. Zum Ausführen öffne Pylino am Computer mit Chrome oder Edge.\n\n'
+    : 'Willkommen bei Pylino!\nSchreibe links dein Programm und klicke auf „Ausführen“.\n\n', 'welcome');
 
   setTarget(State.target);
   Pico.updateUi();
