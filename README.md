@@ -1,6 +1,6 @@
 # Pylino
 
-Ein sehr einfacher Python-Editor für den Schulunterricht – komplett im Browser, ohne Installation.
+Ein sehr einfacher Python-Editor – komplett im Browser, ohne Installation.
 
 **Direkt starten:** https://devclasen.github.io/Pylino/
 
