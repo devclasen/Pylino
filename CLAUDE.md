@@ -63,7 +63,7 @@ Der Prototyp wurde nur auf Syntax/Logik geprüft (Node `--check`, Python-Setup u
    - Achtung: Selbst gehostete Pyodide-Dateien lassen sich von `file://` aus nicht laden. Entweder Doppelklick-Version weiter mit CDN anbieten oder nur den Link verwenden (Empfehlung: Link).
    - Danach optional als PWA mit Service Worker → funktioniert auch offline.
 4. **Eingabe direkt in der Konsole** (Cursor hinter der Frage wie bei Thonny) wäre die „schönste“ Variante – optional, das Eingabefeld ist aktuell okay.
-5. Impressum/Datenschutzerklärung für die gehostete Seite (Hoster sieht IP-Adressen; Programme bleiben nur im Browser, keine Schülerdaten auf dem Server).
+5. ~~Impressum/Datenschutzerklärung~~ erledigt: `datenschutz.html` (eine Seite, Anker `#impressum` / `#datenschutz`, Anrede „du“), verlinkt in Fußzeile und Hilfe. Anbieterdaten wie bei Tinkify (`Documents/Tinkify/website/anbieter.mjs`: c/o COCENTER, E-Mail tinkify@mail.de, ULD Schleswig-Holstein). Impressum nach § 18 Abs. 1 MStV (privat, nicht kommerziell). **Bei jeder Änderung an geladenen Diensten mitpflegen** – z. B. Abschnitt 3 (cdnjs, jsDelivr) entfällt/ändert sich, sobald Pyodide und CodeMirror selbst gehostet werden.
 
 ## Später / Ideen
 

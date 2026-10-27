@@ -208,6 +208,7 @@ footer { display: flex; justify-content: space-between; gap: 12px; padding: 6px 
 .status.running .dot { background: var(--accent); animation: pulse .6s infinite alternate; }
 .status.error .dot { background: #d33; }
 @keyframes pulse { from { opacity: 1; } to { opacity: .35; } }
+footer a.legal { color: var(--muted); }
 kbd { font: 11.5px ui-monospace, Consolas, monospace; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 0 4px; background: var(--panel); }
 
 /* Hilfe-Dialog */
@@ -322,7 +323,7 @@ dialog::backdrop { background: rgba(10, 12, 16, .45); }
 
 <footer>
   <span class="status busy" id="status"><span class="dot"></span><span id="status-text">Python wird geladen …</span></span>
-  <span><kbd>Strg</kbd>+<kbd>Enter</kbd> ausführen · <kbd>Esc</kbd> stoppen · <kbd>Strg</kbd>+<kbd>S</kbd> speichern</span>
+  <span><kbd>Strg</kbd>+<kbd>Enter</kbd> ausführen · <kbd>Esc</kbd> stoppen · <kbd>Strg</kbd>+<kbd>S</kbd> speichern · <a class="legal" href="datenschutz.html" target="_blank" rel="noopener">Impressum &amp; Datenschutz</a></span>
 </footer>
 
 <dialog id="help">
@@ -377,7 +378,7 @@ dialog::backdrop { background: rgba(10, 12, 16, .45); }
       <li><b>Programm hängt:</b> <b>Stopp</b> drücken. Auf dem Computer wird Python dabei kurz neu gestartet.</li>
     </ul>
 
-    <p class="credits">Pylino nutzt <a href="https://pyodide.org" target="_blank" rel="noopener">Pyodide</a>, <a href="https://codemirror.net/5/" target="_blank" rel="noopener">CodeMirror</a>, <a href="https://micropython.org" target="_blank" rel="noopener">MicroPython</a> und die Schrift Poppins (SIL Open Font License).</p>
+    <p class="credits">Pylino nutzt <a href="https://pyodide.org" target="_blank" rel="noopener">Pyodide</a>, <a href="https://codemirror.net/5/" target="_blank" rel="noopener">CodeMirror</a>, <a href="https://micropython.org" target="_blank" rel="noopener">MicroPython</a> und die Schrift Poppins (SIL Open Font License). · <a href="datenschutz.html" target="_blank" rel="noopener">Impressum &amp; Datenschutz</a></p>
   </div>
 </dialog>
 

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum und Datenschutz – Pylino</title>
+<meta name="robots" content="noindex">
+<style>
+:root {
+  --bg: #f3f2ee;
+  --panel: #ffffff;
+  --line: #e1ded5;
+  --ink: #1c2230;
+  --muted: #6a6f7d;
+  --brand: #2f8a55;
+  --accent: #157a4c;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12141a; --panel: #1b1e25; --line: #2b303a;
+    --ink: #e7e9ee; --muted: #9aa1ad; --brand: #6cc98a; --accent: #22a06b;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 15px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+main { max-width: 760px; margin: 0 auto; padding: 24px 16px 48px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 8px 24px 20px; margin-bottom: 20px; }
+.top { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+.brand { font-weight: 700; font-size: 21px; color: var(--brand); text-decoration: none; }
+h1 { font-size: 24px; margin: 18px 0 8px; }
+h2 { font-size: 17px; margin: 22px 0 6px; }
+p, li { margin: 6px 0; }
+ul { padding-left: 22px; }
+a { color: var(--accent); }
+.muted { color: var(--muted); }
+nav a { margin-left: 14px; }
+@media (max-width: 520px) { .card { padding: 4px 16px 16px; } nav a { margin: 0 14px 0 0; } }
+</style>
+</head>
+<body>
+<main>
+
+<div class="top">
+  <a class="brand" href="./">Pylino</a>
+  <nav><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a><a href="./">Zurück zu Pylino</a></nav>
+</div>
+
+<section class="card" id="impressum">
+<h1>Impressum</h1>
+<p class="muted">Pylino ist ein privates, nicht kommerzielles Angebot.</p>
+
+<h2>Angaben gemäß § 18 Abs. 1 MStV</h2>
+<p>Dev Clasen<br>c/o COCENTER<br>Koppoldstr. 1<br>86551 Aichach<br>Deutschland</p>
+
+<h2>Kontakt</h2>
+<p>E-Mail: <a href="mailto:tinkify@mail.de">tinkify@mail.de</a></p>
+</section>
+
+<section class="card" id="datenschutz">
+<h1>Datenschutzerklärung</h1>
+
+<h2>Das Wichtigste in Kürze</h2>
+<ul>
+  <li>Deine Programme bleiben in deinem Browser. Pylino schickt sie an keinen Server, auch nicht an uns.</li>
+  <li>Es gibt keine Anmeldung, keine Cookies, keine Werbung und keine Statistik- oder Tracking-Tools.</li>
+  <li>Beim Öffnen von Pylino sehen die Server, von denen die Seite und Python geladen werden, deine IP-Adresse. Das ist technisch nicht anders möglich. Welche Server das sind, steht unten.</li>
+</ul>
+
+<h2>1. Verantwortlicher</h2>
+<p>Verantwortlich im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:</p>
+<p>Dev Clasen<br>c/o COCENTER<br>Koppoldstr. 1<br>86551 Aichach<br>Deutschland<br>E-Mail: <a href="mailto:tinkify@mail.de">tinkify@mail.de</a></p>
+<p>Ein Datenschutzbeauftragter ist nicht benannt, da hierfür keine gesetzliche Pflicht besteht.</p>
+
+<h2>2. Hosting bei GitHub Pages</h2>
+<p>Pylino wird über den Dienst „GitHub Pages“ der GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA, bereitgestellt. Beim Aufruf der Seite übermittelt dein Browser automatisch technische Daten an GitHub, insbesondere:</p>
+<ul>
+  <li>IP-Adresse deines Geräts</li>
+  <li>Datum und Uhrzeit des Zugriffs</li>
+  <li>aufgerufene Datei</li>
+  <li>Browsertyp und Betriebssystem</li>
+</ul>
+<p>Nach eigenen Angaben speichert GitHub die IP-Adressen der Besucher von GitHub-Pages-Seiten zu Sicherheitszwecken. Wir selbst haben auf diese Daten keinen Zugriff und werten sie nicht aus.</p>
+<p><b>Rechtsgrundlage</b> ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt darin, Pylino ohne Installation und kostenlos über einen zuverlässigen Dienst bereitzustellen.</p>
+<p><b>Übermittlung in die USA:</b> GitHub ist unter dem EU-US Data Privacy Framework zertifiziert. Für Übermittlungen an GitHub gilt damit der Angemessenheitsbeschluss der EU-Kommission vom 10. Juli 2023 (Art. 45 DSGVO). Weitere Informationen findest du in der <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">Datenschutzerklärung von GitHub</a>.</p>
+
+<h2>3. Laden von Python und Editor (Content Delivery Networks)</h2>
+<p>Damit Python im Browser laufen kann, lädt Pylino beim Öffnen zusätzliche Programmdateien von zwei öffentlichen Servernetzen (Content Delivery Networks):</p>
+<ul>
+  <li><b>cdnjs</b> (cdnjs.cloudflare.com), betrieben von Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA – für den Editor (CodeMirror). Cloudflare ist unter dem EU-US Data Privacy Framework zertifiziert. Mehr in der <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Datenschutzerklärung von Cloudflare</a>.</li>
+  <li><b>jsDelivr</b> (cdn.jsdelivr.net) – für Python im Browser (Pyodide) und für Zusatzpakete wie <code>numpy</code>, wenn dein Programm sie verwendet. jsDelivr liefert die Dateien über die Servernetze mehrerer Anbieter aus, darunter Anbieter mit Sitz in den USA. Mehr in der <a href="https://www.jsdelivr.com/terms/privacy-policy" target="_blank" rel="noopener">Datenschutzerklärung von jsDelivr</a>.</li>
+</ul>
+<p>Dabei erhalten diese Anbieter deine IP-Adresse und die Information, welche Datei angefragt wird. Deine Programme werden dabei nicht übertragen. Dabei können Daten in die USA übermittelt werden.</p>
+<p><b>Rechtsgrundlage</b> ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt in der schnellen und zuverlässigen Auslieferung der großen Programmdateien, ohne die Pylino nicht funktioniert.</p>
+
+<h2>4. Speicherung in deinem Browser</h2>
+<p>Damit deine Arbeit beim nächsten Öffnen noch da ist, speichert Pylino im lokalen Speicher deines Browsers (Local Storage): deinen Programmtext, den Dateinamen, das gewählte Ziel (Computer oder Pico) und die Schriftgröße. Diese Angaben bleiben auf deinem Gerät und werden weder an uns noch an Dritte übertragen. Du kannst sie jederzeit über die Einstellungen deines Browsers löschen (Websitedaten löschen).</p>
+<p>Rechtsgrundlage ist § 25 Abs. 2 Nr. 2 TDDDG, da die Speicherung für diese von dir gewünschte Funktion unbedingt erforderlich ist.</p>
+<p>Wenn du ein Programm öffnest oder speicherst, liest bzw. schreibt Pylino nur die Datei, die du selbst auswählst. Auch sie bleibt auf deinem Gerät.</p>
+
+<h2>5. Ausführen von Programmen und Raspberry Pi Pico</h2>
+<p>Deine Python-Programme werden ausschließlich in deinem Browser ausgeführt. Verbindest du einen Raspberry Pi Pico, fließen die Daten nur über das USB-Kabel zwischen deinem Browser und dem Pico. Der Zugriff auf den Pico ist erst möglich, nachdem du ihn im Auswahlfenster deines Browsers selbst ausgewählt hast.</p>
+
+<h2>6. Schrift und Links zu anderen Websites</h2>
+<p>Die Schrift von Pylino ist in die Seite eingebettet. Es wird keine Verbindung zu Google Fonts oder ähnlichen Diensten hergestellt.</p>
+<p>In der Hilfe stehen Links zu anderen Websites (z. B. micropython.org). Erst wenn du einen davon anklickst, werden Daten an den jeweiligen Anbieter übertragen. Dort gilt dessen Datenschutzerklärung.</p>
+
+<h2>7. Kontakt per E-Mail</h2>
+<p>Wenn du uns per E-Mail schreibst, verarbeiten wir deine E-Mail-Adresse, deinen Namen (sofern angegeben) und den Inhalt deiner Nachricht, um deine Anfrage zu beantworten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (unser berechtigtes Interesse an der Beantwortung von Anfragen). Wir löschen deine Daten, sobald deine Anfrage abschließend bearbeitet ist, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
+<p>Unser E-Mail-Postfach wird von der mail.de GmbH, Friedrich-Ebert-Straße 70, 33330 Gütersloh, Deutschland, betrieben; deine Nachricht wird dort gespeichert.</p>
+
+<h2>8. Deine Rechte</h2>
+<p>Du hast uns gegenüber folgende Rechte hinsichtlich deiner personenbezogenen Daten:</p>
+<ul>
+  <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
+  <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
+  <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+  <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+  <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+</ul>
+<p>Dafür genügt eine formlose Nachricht an die oben genannte E-Mail-Adresse. Eine automatisierte Entscheidungsfindung einschließlich Profiling (Art. 22 DSGVO) findet nicht statt.</p>
+<p><b>Widerspruchsrecht (Art. 21 DSGVO):</b> Soweit Daten auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO verarbeitet werden, kannst du aus Gründen, die sich aus deiner besonderen Situation ergeben, jederzeit Widerspruch einlegen.</p>
+<p><b>Beschwerderecht:</b> Du kannst dich bei einer Datenschutz-Aufsichtsbehörde beschweren, insbesondere in dem Bundesland deines Wohnsitzes oder am Sitz des Verantwortlichen. Zuständig für uns ist das <a href="https://www.datenschutzzentrum.de/" target="_blank" rel="noopener">Unabhängige Landeszentrum für Datenschutz Schleswig-Holstein (ULD)</a>, Holstenstraße 98, 24103 Kiel.</p>
+
+<h2>9. Verschlüsselung und Änderungen</h2>
+<p>Pylino wird verschlüsselt übertragen (erkennbar an „https://“ in der Adresszeile).</p>
+<p>Wir passen diese Datenschutzerklärung an, wenn sich Pylino oder die rechtlichen Vorgaben ändern. Es gilt die jeweils hier veröffentlichte Fassung.</p>
+<p class="muted">Stand: Oktober 2026</p>
+</section>
+
+</main>
+</body>
+</html>
